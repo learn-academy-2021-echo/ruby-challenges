@@ -21,3 +21,12 @@ p word.upcase
 p word.reverse
 p word.include?('p')
 p word.capitalize
+
+p array_shows = ['Witcher','Big Bang Theory','Two and half men','Friends','Adam ruins everything']
+p array_shows.length
+p array_shows.first
+p array_shows[3]
+p array_shows.reverse!
+p empty_shows = []
+p empty_shows << array_shows[0]
+p empty_shows << array_shows[1]
