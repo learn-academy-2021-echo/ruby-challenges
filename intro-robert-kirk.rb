@@ -31,18 +31,19 @@ my_string.capitalize
 # Arrays Challenges
 
 #     Create an array that contains the name of at least five TV shows
-show_array = ['the landscapers', 'smallville', 'lost', 'breaking bad', 'pokemon']
+p show_array = ['the landscapers', 'smallville', 'lost', 'breaking bad', 'pokemon']
 #     Find the length of the array
-show_array.length
+p show_array.length
 #     Return the first item in the array
-show_array.first
-show_array[0]
+p show_array.first
+p show_array[0]
 #     Return the fourth item in the array
-show_array[3]
+p show_array[3]
 #     Permanently reverse the order of the array
-show_array.reverse!
+p show_array.reverse!
+p show_array
 
 #     Create a new empty array for your top favorite TV shows
-top_fav = []
+p top_fav = []
 #     From the full TV show array, add your top two favorite shows to the empty array≠≠
-top_fav<<show_array[0]<< show_array[2]
+p top_fav<<show_array[0]<< show_array[2]
