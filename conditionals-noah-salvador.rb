@@ -1,6 +1,6 @@
 p 'User one Select Rock, Paper, or Scissors'
 user1 = gets.chomp
-p user1.downcase!
+user1.downcase!
 p user1
 unless user1.include?('rock') || user1.include?('paper') || user1.include?('scissors')
     p 'Please select one of the given options'
@@ -9,7 +9,7 @@ end
 
 p 'User two Select Rock, Paper, or Scissors'
 user2 = gets.chomp
-p user2.downcase!
+user2.downcase!
 p user2
 unless user2.include?('rock') || user2.include?('paper') || user2.include?('scissors')
     p 'Please select one of the given options'
