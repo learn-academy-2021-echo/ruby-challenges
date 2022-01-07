@@ -29,7 +29,23 @@ end
 p mult num
 
 # Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
+input_array = ['regina', 'kevin', 'learn', 'academy']
+def cap array
+  array.map do |word|
+  word.capitalize
+  end
+end
+
+p cap input_array
+p input_array
 # Create a method that takes in an array of numbers and returns the largest number in the array.
+num_array = [3, 22, 0, 88, 1, 5, 1000, 2]
+def largest array
+  array.max do |value|
+    value
+ end
+end
+p largest num_array
 # Create a method that takes in an array of numbers and returns the smallest number in the array.
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
