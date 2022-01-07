@@ -92,5 +92,20 @@
 
 # p string_array(start_array, 'a')
     
+# Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
 
-    
+# num_array = 1..100
+# def fizz_buzz array
+#     array.each do |value|
+#     if value % 3 == 0 && value % 5 == 0
+#         p "FizzBuzz"
+#     elsif value % 5 == 0
+#         p "Buzz"
+#     elsif value % 3 == 0
+#         p "Fizz"
+#     else
+#         p value
+#     end
+# end
+# end
+# fizz_buzz num_array
