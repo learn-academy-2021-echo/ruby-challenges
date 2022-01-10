@@ -44,7 +44,7 @@ end
   end
   if path =='tavern'
 
-    puts 'A man with a long white beard buys you a drink. Do you speak to the beareded man (yes/no)?'
+    puts 'A man with a long white beard buys you a drink. Do you speak to the bearded man (yes/no)?'
     talk = gets.chomp
     if talk == 'yes'
       puts 'After speaking to the bearded man, he reveals he is a mage. And offers you to be his apprentice. Do you accept (yes/no)?'
@@ -58,15 +58,39 @@ end
   end
     if path == 'random'
       puts 'You have blacked out for the rest of the night'
-      path = ['arrested', 'knight', 'pirate']
+      path_array = ['arrested', 'knight', 'pirate']
+      path = path_array[rand(path_array.length)]
+
+      
     end
 if path == 'arrested'
   puts 'You wake up in jail. Your punishment is four years service in the militia.'
   path = 'militia'
 end
-
+ if path == 'pirate'
+  puts "A splash of cold water instantly wakes you up. Your nose fills with the sea air and an unfamiliar voice says 'welcome aboard the Souls Echo!!' He then hands you a mop and a bucket and says 'GET TO WORK!'"
+  puts '(Ask) Where am I?'
+  puts 'If memory serves, yeh lost a drinkin game to good ol Capt Robert. Signed up to serve for as long as ye can swing a sword or swab a deck. Congradulations'
+  puts 'You serve the next few years learning the ways of the sea'
+ end
 
 
 
 end
 # This is the end of the coast line option
+
+## Begining of the middle portion of our story
+
+puts "News that the country to the north, Pavania, is gathering it's forces for an invasion. It's forces far outnumber yours in the peaceful kingdom of Gluaynia"
+puts 'Queen Sarah dispatches the militia to the border in a desperate attempt to slow the invading forces.'
+
+  if path == 'militia'
+    puts 'You have been assigned to the front lines. The morale is low. There is talk of desertion! What do you do? Desert, keep quiet, or report to your superiors (desert, keep quiet, or report)'
+      militia_path == gets.chomp 
+      if militia_path == 'desert'
+        puts "You sneak out of your company's camp in the dead of night and dare the mountains to the east. After losing your some of your fingers to frost bite and the rest of your right arm to a bear, you are captured by bounty hunters. Hung for your crime, children will sing your name for generations"
+      elsif militia_path == 'keep quiet'
+        puts "You are thrown on the front line as a distraction for the real army arriving later that day. It's a slaughter"
+      elsif militia_path == 'report'
+        puts "Recognized for your bravery to step up first to the line, you are promoted and sent back to headquarters to fight along side Queen Gluaynia's personal army. You will fight with her brave knights"
+      
