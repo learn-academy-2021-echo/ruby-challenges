@@ -63,7 +63,7 @@ end
       path_array = ['arrested', 'knight', 'pirate', 'knight', 'pirate']
       path = path_array[rand(path_array.length)]
 
-      
+
     end
 if path == 'arrested'
   puts 'You wake up in jail. Your punishment is four years service in the militia.'
@@ -89,13 +89,15 @@ if path == 'mage'
   puts 'You undergo rigorous and often painful training to learn the ways of magic.'
  # continues after militia path
 end
-
+if path == 'knight'
+puts 'You have just completed your two years of knight training and now you are ready for knighthood.'
+end
 puts "News that the country to the north, Pavania, is gathering it's forces for an invasion. It's forces far outnumber yours in the peaceful kingdom of Gluaynia"
 puts 'Queen Sarah dispatches the militia to the border in a desperate attempt to slow the invading forces.'
 
 if path == 'militia'
   puts 'You have been assigned to the front lines. The morale is low. There is talk of desertion! What do you do? Desert, keep quiet, or report to your superiors (desert, keep quiet, or report)'
-    militia_path == gets.chomp 
+    militia_path == gets.chomp
     if militia_path == 'desert'
       puts "You sneak out of your company's camp in the dead of night and dare the mountains to the east. After losing your some of your fingers to frost bite and your right arm to a bear, you are captured by bounty hunters. You are sentenced to be hung for your crime, as an example to others who are thinking of deserting."
       puts 'The enemy army has attacked and wiped out the militia. They find you in a cell in the fort.'
@@ -135,7 +137,7 @@ if path == 'militia'
       puts 'GAME OVER'
     end
 end # end of militia
-      
+
 # mage path continued
 if path == 'mage'
   puts 'Upon hearing of the impending war you think of your parents and siblings back home that are going to be in danger. \n Demetrius wants no part in this war of humans and advises you to stay out of it. /n Do you (go back) and help defend your coutry, or \n (stay) out of it with Demetrius?'
@@ -186,6 +188,14 @@ end
 
 # Knight path
 if path == 'knight'
+  puts 'You are traveling north towards the battlefield when you receive report that the enemy has begun its siege of the militia.'
+  puts 'Do you (charge) into battle or (stay) at camp and plan your attack?'
+end
+  choice = gets.chomp
+  if choice == 'charge'
+    puts 'You were able to push back the enemy army, but have suffered heavy casulties in the fight.'
+  elsif choice == 'stay'
+    puts 'You have fortified your position. And created a well calculated plan of attack.'
 
 
 
