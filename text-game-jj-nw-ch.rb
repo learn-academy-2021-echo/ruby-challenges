@@ -1,13 +1,13 @@
-puts 'Welcome to '
+puts 'Welcome to Gluaynia'
 
 farm_array = []
 mountain_array = []
 city_array = []
-coast_array = ['You were kidnapped and forced to work for pirates', 'Your coast was just invaded by pirates', 'A hurricane has just torn down your city']
+coast_array = ['A hurricane has just torn down your city','Your brother died in a horrible fishing accident', 'Your partner has just left you for a hot John B']
 puts 'Enter your name:'
 name = gets.chomp
-puts "Hello #{name}, did you grow up in a farming village, a mountain top, a city, or a coast line?"
-born = gets.chomp
+puts "Hello #{name}, you grew up on a coastal fishing village and a messenger comes to you with important news."
+born = "coast line"
 
 
 if born == 'coast line'
@@ -60,7 +60,7 @@ end
   end
     if path == 'random'
       puts 'You have blacked out for the rest of the night'
-      path_array = ['arrested', 'knight', 'pirate', 'knight', 'pirate']
+      path_array = ['arrested', 'knight', 'knight']
       path = path_array[rand(path_array.length)]
 
 
@@ -69,12 +69,12 @@ if path == 'arrested'
   puts 'You wake up in jail. Your punishment is four years service in the militia.'
   path = 'militia'
 end
- if path == 'pirate'
-  puts "A splash of cold water instantly wakes you up. Your nose fills with the sea air and an unfamiliar voice says 'welcome aboard the Souls Echo!!' He then hands you a mop and a bucket and says 'GET TO WORK!'"
-  puts '(Ask) Where am I?'
-  puts 'If memory serves, yeh lost a drinkin game to good ol Capt Robert. Signed up to serve for as long as ye can swing a sword or swab a deck. Congradulations'
-  puts 'You serve the next few years learning the ways of the sea'
- end
+#  if path == 'pirate'
+#   puts "A splash of cold water instantly wakes you up. Your nose fills with the sea air and an unfamiliar voice says 'welcome aboard the Souls Echo!!' He then hands you a mop and a bucket and says 'GET TO WORK!'"
+#   puts '(Ask) Where am I?'
+#   puts 'If memory serves, yeh lost a drinkin game to good ol Capt Robert. Signed up to serve for as long as ye can swing a sword or swab a deck. Congradulations'
+#   puts 'You serve the next few years learning the ways of the sea'
+#  end
 
 
 
@@ -190,13 +190,36 @@ end
 if path == 'knight'
   puts 'You are traveling north towards the battlefield when you receive report that the enemy has begun its siege of the militia.'
   puts 'Do you (charge) into battle or (stay) at camp and plan your attack?'
-end
   choice = gets.chomp
   if choice == 'charge'
     puts 'You were able to push back the enemy army, but have suffered heavy casulties in the fight.'
+    path = 'casualties'
   elsif choice == 'stay'
     puts 'You have fortified your position. And created a well calculated plan of attack.'
-
-
+  path = 'well fortified'
+  end
+  if path == 'casualties'
+    puts 'Your men await your orders. Do you (pursue) the enemy, do you (fortify) and await reinforcements, or (withdraw) south and meet the main army. You regroup and gather supplies and fortify your position.'
+  orders = gets.chomp
+    if orders == 'fortify'
+      puts "You treat the wounded and build up your defenses. With your archers on the wall you await the enemy attack. As morning approaches, the scouts you sent out the night before have not returned. The quaking sound of marching grows louder and louder. You prepare for the impending assualt. Your archers fire but barely slow the enemy's quick appoach. They overrun your walls. Though your soldiers fight hard, they are cut down infront of you. You die amongst your men"
+    elsif orders == 'pursue'
+      puts "You order the men to their horses to puersue the enemy. You catch the enemy off guard, pushing back their defenses. As your men tire, you are surrounded and overwhelmed by the enemy's sheer numbers."
+    elsif orders == 'withdraw'
+      puts "With the sheer number of wounded, your progress is slow, but you eventually make it back to the main army. You are welcomed as heros. With no time to rest, planning for the enemy's next attack has begun"
+    path = 'fortified'
+    end
+  end
+  if path == 'well fortified'
+     puts "Your troops are in formation awaiting the enemy to come through a narrow mountain pass. The enemy advances towards you, funneled through the pass. After suffering heavy losses, they retreat. Knowing victory is in your grasp, do you sieze this oppertunity and (advance) or do allow the enemy to fully (retreat)?"
+    retreat = gets.chomp
+    if retreat == 'retreat'
+      puts "By deciding to allow the enemy to retreat, they have used the oppertunity regrain their strength and destroy your army"
+    elsif retreat == 'advance'
+      puts "You persue the enemy at high speed, wiping out their forces, and saving your kingdom"
+    end
+  elsif path == 'fortified'
+    puts "Your troops are in formation awaiting the enemy with their swords at the ready. The enemy advances towards your lines with lightning speed. Though your soliders fight bravely, their sheer numbers overwhelm your defenses. GAME OVER."
+  end
 
 end
