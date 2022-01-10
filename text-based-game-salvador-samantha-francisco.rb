@@ -1,10 +1,12 @@
-#Chupacabras
-#What is your name? Random Name
-p 'What is your name, outsider?'
-name = gets.chomp
-p name
 
 
+def art()
+    puts "
+               ((...))         ((...))
+               ( x x )         ( x x )
+                \   /           \   /
+                 ^_^             ^_^  "
+    end
 
 #######################################################################
 
@@ -19,10 +21,13 @@ def population_goats()
     p 'How many goats do you have'
     population = gets.chomp
     if population.to_i > 50
+        art()
         p '20 goats will die, I will have a full belly'
     elsif population.to_i <= 50 && population.to_i > 20
+        art()
         p '10 goats will die, full meal'
     elsif population.to_i <= 20 && population.to_i > 5
+        art()
         p '1 goat will die, I am on a diet'
     elsif population.to_i <= 5 && population.to_i > 0
         p 'Not worth it'
@@ -44,7 +49,6 @@ def avg_goats()
     average_age = gets.chomp
     if average_age.to_i >= 16
         p 'Yours goats are not worth it'
-        population_goats()
     elsif average_age.to_i < 16 && average_age.to_i >= 10
         p 'I will visit you'
         population_goats()
@@ -86,7 +90,14 @@ end
 # #East - More fluff goats, too far to chase. ; B
 # #South - I am all in, my territory. ; C
 # #West - Better hit the beach. ; D
-p 'What area do you come from - West, East South or North?'
+p 'Ready to play the Chupacabra mind game?'
+art()
+#Chupacabras
+#What is your name? Random Name
+p 'What is your name, outsider?'
+name = gets.chomp
+p name
+p 'What area do you come from - West, East, South or North?'
 location = gets.chomp
 # p name
 #For A,D end of storyline
@@ -111,13 +122,7 @@ p 'Chupacabra inner thoughts'
 
 #######################################################Art
 
-def art()
-puts "
-           ((...))         ((...))
-           ( x x )         ( x x )
-            \   /           \   /
-             ^_^             ^_^  "
-end
 
 
-art()
+
+
