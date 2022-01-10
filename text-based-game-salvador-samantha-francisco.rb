@@ -82,6 +82,85 @@ def guns()
     end
 end
 
+
+def cool()
+
+puts"
+
+                       ____ _,..OOO......-...OOO-...._ ___
+                     .`    '_.-(  9``````````P  )--...)   `.
+                    ` ((     `  || __         ||   `     )) `
+                   (          ) |<`  ````---__||  (          )
+                    `        `  ||) ,xx  xx.  //)__`        `  
+                     `-____-`   ,/  O`  O`   //,'_ )`-____-` 
+                              ,/     ,,     //  |//
+                              /      ((          //
+                             (   (._    _,)     (_) -OH YEAH!
+                              -    -````/        /
+                               -    ^--^        /
+                                -_   _____   __/
+                                  | |     | |
+                                 (   )   (   )
+                               ,--'~'-   /'~'--,
+                              (_______) (_______)
+          _ __ ___  ___  _        ___  _  ___
+         | / /| . || . || |  ___ | . || || . \
+         |  - | | || | || |_|___||   || || | |
+         |_|_|`___'`___'|___|    |_|_||_||___/
+__ __  ___  _ _  _ 
+|  |  -| . || | || |
+|     ||   ||   ||_/
+|_|_|_||_|_||_|_|<_>    "
+
+end
+
+def axe()
+    puts"
+            /}_[]_/|
+           |] _||_ [|
+    ___     [} || {/
+   /___\       ||
+  (|0 0|)      ||
+__/{{}}; _ ___/vvv
+/ |  {~}   / _|_P|
+| /|  ~   /_/   []
+|_| (____)        
+|_]/______|        
+   _|_||_/_           
+  (_,_||_,_)
+"
+end
+
+
+
+
+
+def waves(temp)
+    if temp < 80
+        p 'waves will be 6ft high during mid-day'
+        cool()
+    elsif temp >= 80
+        p ' waves will be 12 ft high during the morning'
+        cool()
+    end
+end
+
+
+
+
+
+def beach()
+    p 'How is the weather this coming week?'
+    weather = gets.chomp
+    if weather.to_i > 70 
+        p 'Nice weather to hit the waves'
+        waves(weather.to_i)
+    elsif weather.to_i <= 70
+        p'I will stay inside my cave and watch netflix'
+    else
+        p'This person is lying'
+    end
+end
 ############################################################################
 
 #Start of Story Line
@@ -90,6 +169,8 @@ end
 # #East - More fluff goats, too far to chase. ; B
 # #South - I am all in, my territory. ; C
 # #West - Better hit the beach. ; D
+p 'The story of the Chupacabra, there was once a chupacabra in Nuevo Mexico that came from the souther parts of aztec islands,in order to survived it had to hunt but even before hunting it had to scout the new villagers that came to the area. Every time a new villager came, the chupacabra alwas asked friendly questions.'
+
 p 'Ready to play the Chupacabra mind game?'
 art()
 #Chupacabras
@@ -105,7 +186,7 @@ location = gets.chomp
 p 'Chupacabra inner thoughts'
     if location.downcase == 'north'
     p 'too cold not worth it'
-
+    axe()
     elsif location.downcase == 'east'
     p 'More fluff goats, too far to chase'
 
@@ -114,7 +195,7 @@ p 'Chupacabra inner thoughts'
     guns()
     elsif location.downcase == 'west'
         p 'Better hit the beach'
-    guns()
+    beach()
     else
         p "This guy or gal #{name} is lost"
     end
