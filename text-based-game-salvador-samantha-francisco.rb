@@ -1,7 +1,7 @@
 #Chupacabras
 #What is your name? Random Name
 p 'What is your name, outsider?'
-name = gets.chomp 
+name = gets.chomp
 p name
 
 
@@ -9,7 +9,7 @@ p name
 #######################################################################
 
 #population_goats function
-#How many goats do you have? 
+#How many goats do you have?
 #Get information on number of goats then do next set of instructions
 #less than 5 not worth it
 #more than 5 but less than 20, one goat dies.
@@ -56,7 +56,7 @@ def avg_goats()
         population_goats()
     else
         p 'What a newby'
-    end 
+    end
 end
 
 
@@ -69,7 +69,7 @@ def guns()
     p 'Do you own guns, yes or no?'
     ask_gun = gets.chomp
     if ask_gun.downcase == 'yes'
-        p 'I better think this twice, maybe not' 
+        p 'I better think this twice, maybe not'
     elsif ask_gun.downcase == 'no'
         'you loose your goats'
         avg_goats()
@@ -77,7 +77,7 @@ def guns()
         'Does he even know what is gun powder?'
     end
 end
- 
+
 ############################################################################
 
 #Start of Story Line
@@ -87,7 +87,7 @@ end
 # #South - I am all in, my territory. ; C
 # #West - Better hit the beach. ; D
 p 'What area do you come from - West, East South or North?'
-location = gets.chomp 
+location = gets.chomp
 # p name
 #For A,D end of storyline
 #For B,C continue next phase
@@ -113,27 +113,11 @@ p 'Chupacabra inner thoughts'
 
 def art()
 puts "
-     .--.              .--.
-     : (\ '. _......_ .' /) :
-      '.    `        `    .'
-       /'   _        _   `\
-      /     0}      {0     \
-     |       /      \       |
-     |     /'        `\     |
-      \   | .  .==.  . |   /
-       '._ \.' \__/ './ _.'
-       /  ``'._-''-_.'``  \
-
-       "
+           ((...))         ((...))
+           ( x x )         ( x x )
+            \   /           \   /
+             ^_^             ^_^  "
 end
 
+
 art()
-
-
-
-
-
-
-
-
-
