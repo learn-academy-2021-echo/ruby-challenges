@@ -95,7 +95,7 @@ end
 if path == 'knight'
 puts 'You have just completed your two years of knight training and now you are ready for knighthood.'
 end
-puts "News that the country to the north, Pavania, is gathering it's forces for an invasion. It's forces far outnumber yours in the peaceful kingdom of Gluaynia"
+puts typing "News that the country to the north, Pavania, is gathering it's forces for an invasion. It's forces far outnumber yours in the peaceful kingdom of Gluaynia"
 puts 'Queen Sarah dispatches the militia to the border in a desperate attempt to slow the invading forces.'
 
 if path == 'militia'
