@@ -14,28 +14,30 @@ if born == 'coast line'
   rando = coast_array[rand(coast_array.length)]
   p rando
 
-puts 'You were super upset over the incident. You got drunk. Now you are waking up in a tavern, and the barkeep wants you OUT! You have two options: fight or comply. What do you choose?'
-fight_or_flight = gets.chomp
-if fight_or_flight == 'fight'
-  puts 'You have chosen to fight! Will you be throwing a jab, right-hook, or uppercut?'
-  punch = gets.chomp
-  if punch == 'uppercut'
-    puts 'You have landed a sucessfull knockout! And now you keep drinking! After your third shot, the town guard arrives to arrest you.'
-    path = 'arrested'
-  elsif punch == 'right-hook'
-    puts 'You are too drunk and miss completely. You have been thrown out'
+  puts 'You were super upset over the incident. You got drunk. Now you are waking up in a tavern, and the barkeep wants you OUT! You have two options: fight or comply. What do you choose?'
+  fight_or_flight = gets.chomp
+  if fight_or_flight == 'fight'
+    puts 'You have chosen to fight! Will you be throwing a jab, right-hook, or uppercut?'
+    punch = gets.chomp
+    if punch == 'uppercut'
+      puts 'You have landed a sucessfull knockout! And now you keep drinking! After your third shot, the town guard arrives to arrest you.'
+      path = 'arrested'
+    elsif punch == 'right-hook'
+      puts 'You are too drunk and miss completely. You have been thrown out'
+      path = 'leave_bar'
+    elsif punch == 'jab'
+      puts 'You are too drunk and miss completely. You have been thrown out'
+      path = 'leave_bar'
+    end
+  elsif fight_or_flight == 'comply'
+    puts 'You have chosen to comply with the barkeep and leave.'
     path = 'leave_bar'
-  elsif punch == 'jab'
-    puts 'You are too drunk and miss completely. You have been thrown out'
-    path = 'leave_bar'
-elsif fight_or_flight == 'comply'
-  puts 'You have chosen to comply with the barkeep and leave.'
-  path = 'leave_bar'
+  end
 end
-end
+
   if path == 'leave_bar'
-  puts 'You see a knights recruiter with a sign up sheet. Do you sign up (yes/no)?'
-  knights = gets.chomp
+    puts 'You see a knights recruiter with a sign up sheet. Do you sign up (yes/no)?'
+    knights = gets.chomp
     if knights == 'yes'
       path = 'knight'
       puts 'Welcome to the Knighthood. You will train as an apprentice for the next two years.'
@@ -65,6 +67,7 @@ end
 
 
     end
+
 if path == 'arrested'
   puts 'You wake up in jail. Your punishment is four years service in the militia.'
   path = 'militia'
@@ -78,7 +81,7 @@ end
 
 
 
-end
+# end
 # This is the end of the coast line option
 
 ## Begining of the middle portion of our story
@@ -97,7 +100,7 @@ puts 'Queen Sarah dispatches the militia to the border in a desperate attempt to
 
 if path == 'militia'
   puts 'You have been assigned to the front lines. The morale is low. There is talk of desertion! What do you do? Desert, keep quiet, or report to your superiors (desert, keep quiet, or report)'
-    militia_path == gets.chomp
+    militia_path = gets.chomp
     if militia_path == 'desert'
       puts "You sneak out of your company's camp in the dead of night and dare the mountains to the east. After losing your some of your fingers to frost bite and your right arm to a bear, you are captured by bounty hunters. You are sentenced to be hung for your crime, as an example to others who are thinking of deserting."
       puts 'The enemy army has attacked and wiped out the militia. They find you in a cell in the fort.'
@@ -121,8 +124,9 @@ if path == 'militia'
         end
     end
     if path == 'prisoner'
-      'You are a prisoner of the enemy, they offer you two options. \n
-      (1) Work in a forced labor camp \n (2) Join their army and get land in the new kingdom if they win'
+      'You are a prisoner of the enemy, they offer you two options.'
+      puts '(1) Work in a forced labor camp'
+      puts '(2) Join their army and get land in the new kingdom if they win'
       prisoner_path = gets.chomp
       if prisoner_path == '1'
         puts 'You are sent to work in a forced labor mining camp.'
@@ -140,11 +144,14 @@ end # end of militia
 
 # mage path continued
 if path == 'mage'
-  puts 'Upon hearing of the impending war you think of your parents and siblings back home that are going to be in danger. \n Demetrius wants no part in this war of humans and advises you to stay out of it. /n Do you (go back) and help defend your coutry, or \n (stay) out of it with Demetrius?'
+  puts 'Upon hearing of the impending war you think of your parents and siblings back home that are going to be in danger.' 
+  puts 'Demetrius wants no part in this war of humans and advises you to stay out of it.' 
+  puts 'Do you (go back) and help defend your coutry, or (stay) out of it with Demetrius?'
 end
 involved = gets.chomp
 if involved == 'go back'
-  puts 'One day while Demetrius is off gathering materials, you begin packing your things to head home. You remember that Demetrius has some powerful artifacts locked away in his study. \n Do you (steal) them or (leave) them?'
+  puts 'One day while Demetrius is off gathering materials, you begin packing your things to head home. You remember that Demetrius has some powerful artifacts locked away in his study.'
+  puts 'Do you (steal) them or (leave) them?'
   artifacts = gets.chomp
   if artifacts == 'steal'
     puts 'Demetrius catches you trying to steal his artifacts and offers to give one to you. He offers a broom with the ability to fly or a wand with the ability to summon demons. Do you choose the (broom) or the (wand)?'
@@ -173,6 +180,9 @@ elsif involved == 'stay'
       puts 'GAME OVER'
     end
   end
+  if path == 'demon'
+    puts 'You go to the front lines of the war, and while attempting to use your new demon powers you lose control and annhilate both forces in the war. You eventually come to three days later, and, realizing what you have done, decide to seclude yourself and gain control over these abhorrent powers.'
+    puts 'To Be Continued...'
 end
 
 
@@ -222,4 +232,5 @@ if path == 'knight'
     puts "Your troops are in formation awaiting the enemy with their swords at the ready. The enemy advances towards your lines with lightning speed. Though your soliders fight bravely, their sheer numbers overwhelm your defenses. GAME OVER."
   end
 
+end
 end
