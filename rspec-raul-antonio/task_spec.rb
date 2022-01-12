@@ -37,17 +37,24 @@ describe 'Task' do
   # Story: As a developer, when I print a Task that is done, its status is shown.
 
   # need to figure out why this test is failing
-  it 'show status when task is complete'
+  it 'show status when task is complete' do
     my_task = Task.new
-    # my_task.done = 'complete'
+    my_task.done
     expect(my_task.done).to be_a String
     expect(my_task.done).to eq 'complete'
-    my_task.status = 'complete'
+    # my_task.status = 'complete'
   end
-
-
+  # Story: As a developer, I can add all of my Tasks to a TaskList.
+  it 'add all of my tasks to a tasklist' do
+    my_task = Task.new
+    my_task.title = 'laundry'
+    my_task.add_to_list
+    expect(my_task.add_to_list).to be_a Array
+    expect(my_task.add_to_list).to eq ['title']
+  end
+end
 #
-# Story: As a developer, I can add all of my Tasks to a TaskList.
+
 #
 # Story: As a developer with a TaskList, I can print the completed items.
 #
