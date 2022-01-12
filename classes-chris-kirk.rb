@@ -12,7 +12,7 @@ class Task
     @title = title
     @status = 'incomplete'
   end
-  def complete_task 
+  def complete_task
     @status = 'complete'
   end
 end
@@ -24,13 +24,13 @@ p laundry.status
 dishes = Task.new('dishes')
 mow_lawn = Task.new('mow lawn')
 
-# For the following ColorPalette challenge use initialize and attr_accessor methods in your class
-# As a developer, I can create a class called ColorPalette.
-# As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
-# As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
-# As a developer, I can print the value of each individual color.
-# As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
-# As a developer, I can change one or more colors of a given palette.
+# # For the following ColorPalette challenge use initialize and attr_accessor methods in your class
+# # As a developer, I can create a class called ColorPalette.
+# # As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
+# # As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
+# # As a developer, I can print the value of each individual color.
+# # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
+# # As a developer, I can change one or more colors of a given palette.
 
 class ColorPalette
   attr_accessor :color1, :color2, :color3
@@ -47,10 +47,10 @@ class ColorPalette
     @color2 = new_color2
     @color3 = new_color3
   end
-end 
+end
 
 red = ColorPalette.new('brick', 'garnet', 'ruby')
-p red.color1 
+p red.color1
 p red.color2
 p red.color3
 white = ColorPalette.new('egg shell', 'pearl', 'seashell')
@@ -65,9 +65,10 @@ p red.all_colors
 p white.all_colors
 p blue.all_colors
 red.change_color('cherry', 'rose', 'lipstick')
-p red.color1 
+p red.color1
 p red.color2
 p red.color3
+
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
@@ -75,13 +76,12 @@ p red.color3
 # As a developer, I can age my Animal up one year at a time.
 # As a developer, I can return my Animal's age, as well as if they're alive.
 # Hint: Use attr_accessor as well as an initialize method.
-# As a developer, I can create a Fish that inherits from Animal.
-# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
-# As a developer, I can create a Salmon that inherits from Fish.
-# As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
-# As a developer, I can see that my Salmon is cold-blooded.
-# As a developer, I can age my Salmon up.
-# As a developer, I can see a message that tells me all of my Salmon's information.
+
+module Aquatic
+  def can_swim
+    'I can swim!'
+  end
+end
 
 class Animal
   attr_accessor :alive, :age
@@ -98,7 +98,11 @@ animal = Animal.new
 p animal.alive
 p animal.age
 
+# As a developer, I can create a Fish that inherits from Animal.
+# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
+
 class Fish < Animal
+  include Aquatic
   attr_accessor :cold_blooded
   def initialize
     super()
@@ -106,50 +110,127 @@ class Fish < Animal
   end
 end
 
+# As a developer, I can create a Salmon that inherits from Fish.
+# As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
+# As a developer, I can see that my Salmon is cold-blooded.
+# As a developer, I can age my Salmon up.
+# As a developer, I can see a message that tells me all of my Salmon's information.
+# As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
+# Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
 class Salmon < Fish
-  attr_accessor :species, :age
-  def initialize(species, age)
+  attr_accessor :species
+  def initialize(species)
     super()
     @species = species
   end
-  def alive
-    if @age >= 4 
-       @alive = false
-    else
-       @alive = true
-    end
+
+  def life_span
+    @age >= 4 ? @alive = false : @alive = true
   end
-  def salmon_info
-    "My #{@species} salmon is #{@cold_blooded ? 'cold-blooded' : 'warm-blooded'}. It is #{@alive} and is #{@age} years old."
+
+  def info
+    "My #{@species} salmon is #{@cold_blooded ? 'cold-blooded' : 'warm-blooded'}. It is #{@age} years old and it is #{@alive ? 'alive' : 'dead'}."
   end
 end
 
-salmon = Salmon.new('Atlantic', 4)
-p salmon.cold_blooded
-salmon.aging
-salmon.aging
-salmon.aging
-salmon.aging
-p salmon.age
-p salmon.age
-p salmon.salmon_info
+salmon = Salmon.new('Atlantic')
 
+p salmon.info
+1.upto(4) { salmon.aging }
+salmon.life_span
+p salmon.info
 
-# As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
-# Hint: You will need a method that changes the status of alive in the initialize method of Animal.
 # As a developer, I can create a Mammal that inherits from Animal.
 # As a developer, I can initialize all of my Mammals to be warm_blooded.
+
+class Mammal < Animal
+  include Aquatic
+  def initialize
+    super()
+    @warm_blooded = true
+  end
+end
+
 # As a developer, I can create a Bear that inherits from Mammal.
+class Bear < Mammal
+  def initialize
+    super()
+  end
+  def info
+    "My bear is #{@warm_blooded ? 'warm-blooded' : 'cold-blooded'}. It is #{@age} years old and it is #{@alive ? 'alive' : 'dead'}."
+  end
+  def life_span
+    @age >= 20 ? @alive = false : @alive = true
+  end
+end
+
+bear = Bear.new
+
 # As a developer, I can age my Bear up.
 # As a developer, I can see a message that tells me all of my Bear's information.
 # As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life.
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
+p bear.info
+1.upto(20) { bear.aging }
+bear.life_span
+p bear.info
+
 # As a developer, I can create a Mammal of my choice.
 # As a developer, I can interact with the new Mammal via various methods.
 # As a developer, I can see a message that tells me all of my new Mammal's information.
+
+class Dolphin < Mammal
+  def initialize
+    super()
+    @needs_water = true
+    @speed = 0
+  end
+  def speed_up
+    @speed < 37 ? @speed += 1 : @speed
+  end
+  def slow_down
+    @speed > 0 ? @speed -= 1 : @speed
+  end
+  def life_span
+    @age >= 60 ? @alive = false : @alive = true
+  end
+  def info
+    "My dolphin is #{@age} years old and is #{@alive ? 'alive' : 'dead'}.  It #{@needs_water ? 'needs water' : 'does not need water'} and is #{@warm_blooded ? 'warm-blooded' : 'cold-blooded'}.  It is currently traveling at a speed of #{@speed} mph."
+  end
+end
+
+dolphin = Dolphin.new
+p dolphin.info
+1.upto(50) { dolphin.speed_up }
+p dolphin.info
+1.upto(50) { dolphin.slow_down }
+p dolphin.info
+1.upto(60) { dolphin.aging }
+dolphin.life_span
+p dolphin.info
+
 # STRETCH: As a developer, I can keep a collection of two of each Animal.
 # Hint: You'll want to add your Animals into an array.
 # STRETCH: As a developer, I can sort my collection of Animals based on age.
+
+animals = [
+  dolphin,
+  dolphin2 = Dolphin.new,
+  bear,
+  bear2 = Bear.new,
+  salmon,
+  salmon2 = Salmon.new('Atlantic'),
+]
+
 # Hint: Find out how the spaceship operator can help you with an array.
+p animals
+p animals.sort! { |first_age, second_age| first_age.age <=> second_age.age }
+
 # SUPER STRETCH: As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
 # # Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
+
+p dolphin.can_swim
+p bear.can_swim
+p salmon.can_swim
