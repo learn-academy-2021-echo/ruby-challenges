@@ -25,10 +25,16 @@
 # Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 
 class Task
-    attr_accessor :title, :description, :status
+    attr_accessor :title, :description, :status, :tasklist
     def initialize
     @title 
     @description
     @status = "In Progress"
+    @tasklist = []
+    end
+    def completion
+        if @status == "Complete"
+        p '{@title} is {@status}'
+        end
     end
 end

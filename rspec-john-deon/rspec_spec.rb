@@ -29,10 +29,22 @@ describe 'Task' do
     expect(my_task.status).to be_a String 
     expect(my_task.status).to eq "Complete" 
     end
-    it 'prints status when task is complete'
+    it 'prints status when task is complete' do
     my_task = Task.new
     my_task.status = "Complete"
     expect(my_task.completion).to be_a String 
-    expect(my_task.completion).to eq "Complete"
+    expect(my_task.completion).to eq '{@title} is {@status}'
+    end
+    it 'tasklist exists and is initialized as empty array' do
+    my_task = Task.new
+    expect(my_task.tasklist).to be_a Array
+    expect(my_task.tasklist).to eq []
+    end
+    it 'tasklist stores all tasks inside'
+    my_dishes = Task.new
+    my_dishes.title = "Washing dishes"
+    my_cleaning = Task.new
+    my_cleaning.title = "Cleaning house"
+    
+    end
 end
-    # expect{Task.new}.to be_a string
