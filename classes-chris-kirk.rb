@@ -125,7 +125,8 @@ class Salmon < Fish
     @species = species
   end
 
-  def life_span
+  def aging
+    super
     @age >= 4 ? @alive = false : @alive = true
   end
 
@@ -138,7 +139,6 @@ salmon = Salmon.new('Atlantic')
 
 p salmon.info
 1.upto(4) { salmon.aging }
-salmon.life_span
 p salmon.info
 
 # As a developer, I can create a Mammal that inherits from Animal.
@@ -160,7 +160,8 @@ class Bear < Mammal
   def info
     "My bear is #{@warm_blooded ? 'warm-blooded' : 'cold-blooded'}. It is #{@age} years old and it is #{@alive ? 'alive' : 'dead'}."
   end
-  def life_span
+  def aging
+    super
     @age >= 20 ? @alive = false : @alive = true
   end
 end
@@ -174,7 +175,6 @@ bear = Bear.new
 
 p bear.info
 1.upto(20) { bear.aging }
-bear.life_span
 p bear.info
 
 # As a developer, I can create a Mammal of my choice.
@@ -193,7 +193,8 @@ class Dolphin < Mammal
   def slow_down
     @speed > 0 ? @speed -= 1 : @speed
   end
-  def life_span
+  def aging
+    super
     @age >= 60 ? @alive = false : @alive = true
   end
   def info
@@ -208,7 +209,6 @@ p dolphin.info
 1.upto(50) { dolphin.slow_down }
 p dolphin.info
 1.upto(60) { dolphin.aging }
-dolphin.life_span
 p dolphin.info
 
 # STRETCH: As a developer, I can keep a collection of two of each Animal.
