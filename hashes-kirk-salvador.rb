@@ -28,3 +28,9 @@ p my_phone
 my_phone.each {|key,value| p "On my phone I have the app #{key} it #{value}."}
 # Stretch Challenges
 # As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+def capitalized_app_name(hash)
+    hash.map {|key,value| p "#{key.capitalize}: #{value}"}
+end
+
+p capitalized_app_name my_phone
+
