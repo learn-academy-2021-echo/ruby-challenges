@@ -23,10 +23,11 @@ describe 'TaskList' do
         my_tasklist = TaskList.new
         #Action
         my_tasklist.add_task << Task.new('clean kitchen')
-        my_tasklist
+        my_tasklist.add_task[0].complete
         my_tasklist.add_task << Task.new('clean room')
+        my_tasklist.add_task[1].complete
         my_tasklist.add_task << Task.new('take out trash')
-        my_tasklist.completed_tasks
+
         #Assert
         expect(my_tasklist.completed_tasks).to be_a Array
         expect(my_tasklist.completed_tasks).to eq(['clean kitchen', 'clean room'])
@@ -35,12 +36,10 @@ describe 'TaskList' do
 
 end
 
-
-
-
-
-
 # Story: As a developer with a TaskList, I can print the incomplete items.
+
+
+
 
 # Stretch: Due Date
 # Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.

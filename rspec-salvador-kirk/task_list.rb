@@ -7,9 +7,10 @@ class TaskList < Task
         @add_task = []
     end
     def completed_tasks
-        @add_task.map do |task| 
-            p task
-        
+        @add_task.select do |task| 
+            if task.progress == 'completed' 
+                task.task
+            end
         
         end
     end

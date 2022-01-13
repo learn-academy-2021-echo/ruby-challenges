@@ -11,4 +11,6 @@ class Task
     def info
         "#{@task} has been #{@progress}"
     end
+
+    
 end

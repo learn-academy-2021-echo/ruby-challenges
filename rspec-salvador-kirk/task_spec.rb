@@ -7,8 +7,6 @@
 require 'rspec'
 require_relative 'task'
 
-
-
 describe 'Task' do
   # Story: As a developer, I can create a Task. 
     it 'must be real' do
